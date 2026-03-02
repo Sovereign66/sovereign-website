@@ -252,11 +252,23 @@ text-decoration:underline;
 
 #mainHeader{
 position:fixed;
+top:0;
+left:0;
+width:100%;
 background:#0f2027;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 20px;
+z-index:3000;
 }
 
 .hamburger{
 display:block;
+font-size:28px;
+color:#fff;
+cursor:pointer;
+z-index:3000;
 }
 
 #navMenu{
@@ -269,6 +281,7 @@ background:#0f2027;
 transition:.4s;
 padding-top:100px;
 z-index:2000;
+display:block;
 }
 
 #navMenu.active{
@@ -471,6 +484,7 @@ this.parentElement.classList.toggle("active");
 </body>
 
 </html>
+
 
 
 
