@@ -42,8 +42,9 @@ background:#0055cc;
 /* ================= HEADER ================= */
 
 #mainHeader{
-position:relative;
+position:absolute;
 top:0;
+left:0;
 width:100%;
 padding:20px 60px;
 display:flex;
@@ -51,7 +52,7 @@ justify-content:space-between;
 align-items:center;
 transition:.4s;
 z-index:1000;
-overflow:visible;
+background:transparent;
 }
 
 #mainHeader.scrolled{
@@ -90,16 +91,11 @@ padding:8px 18px;
 border-radius:4px;
 }
 
-.language-toggle{
-padding:5px;
-border-radius:4px;
-}
-
 /* MEGA MENU */
 
 .mega-menu{
 position:absolute;
-top:100%;
+top:60px;
 left:0;
 width:100%;
 background:#ffffff;
@@ -148,9 +144,8 @@ cursor:pointer;
 
 .hero{
 height:100vh;
-background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),
-url('assets/images/hero.jpg');
-background-size:cover;
+background:linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
+url('assets/images/hero.jpg') center center / cover no-repeat;
 display:flex;
 flex-direction:column;
 align-items:center;
@@ -397,6 +392,7 @@ navMenu.classList.toggle("active");
 </body>
 
 </html>
+
 
 
 
