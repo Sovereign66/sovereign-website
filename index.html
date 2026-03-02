@@ -221,6 +221,31 @@ box-shadow:0 5px 15px rgba(0,0,0,.3);
 text-decoration:none;
 }
 
+/* ACCORDION */
+
+.accordion h3{
+cursor:pointer;
+margin:0;
+}
+
+.accordion-content{
+display:none;
+margin-top:15px;
+text-align:left;
+}
+
+.accordion-content a{
+display:block;
+padding:6px 0;
+color:#0077ff;
+text-decoration:none;
+font-size:14px;
+}
+
+.accordion-content a:hover{
+text-decoration:underline;
+}
+  
 /* ================= MOBILE ================= */
 
 @media(max-width:992px){
@@ -329,11 +354,47 @@ Established in 2018, Sovereign Automation & Manufacturing delivers advanced indu
 
 <section class="section">
 <h2>Our Core Categories</h2>
+
 <div class="grid">
-<div class="card"><h3>Industrial Automation</h3></div>
-<div class="card"><h3>Wire & Cable Machinery</h3></div>
-<div class="card"><h3>Solar Structural Systems</h3></div>
-<div class="card"><h3>Turbine & Side Channel Blowers</h3></div>
+
+<div class="card accordion">
+<h3 onclick="toggleAccordion(this)">Industrial Automation</h3>
+<div class="accordion-content">
+<a href="industrial-automation.html">View All Products</a>
+<a href="#">PLC Panels</a>
+<a href="#">Control Panels</a>
+<a href="#">Industrial Conveyors</a>
+</div>
+</div>
+
+<div class="card accordion">
+<h3 onclick="toggleAccordion(this)">Wire & Cable Machinery</h3>
+<div class="accordion-content">
+<a href="wire-cable-machinery.html">View All Products</a>
+<a href="#">House Wire Line</a>
+<a href="#">Extrusion Line</a>
+<a href="#">Auto Coiler</a>
+</div>
+</div>
+
+<div class="card accordion">
+<h3 onclick="toggleAccordion(this)">Solar Structural Systems</h3>
+<div class="accordion-content">
+<a href="solar-structural-systems.html">View All Products</a>
+<a href="#">Ground Mount</a>
+<a href="#">Rooftop Structure</a>
+</div>
+</div>
+
+<div class="card accordion">
+<h3 onclick="toggleAccordion(this)">Turbine & Side Channel Blowers</h3>
+<div class="accordion-content">
+<a href="turbine-side-channel-blowers.html">View All Products</a>
+<a href="#">Single Stage Blower</a>
+<a href="#">Double Stage Blower</a>
+</div>
+</div>
+
 </div>
 </section>
 
@@ -366,11 +427,22 @@ const navMenu = document.getElementById("navMenu");
 hamburger.addEventListener("click", ()=>{
 navMenu.classList.toggle("active");
 });
+
+function toggleAccordion(element){
+let content = element.nextElementSibling;
+if(content.style.display === "block"){
+content.style.display = "none";
+}else{
+content.style.display = "block";
+}
+}
+
 </script>
 
 </body>
 
 </html>
+
 
 
 
