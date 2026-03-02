@@ -258,11 +258,12 @@ display:block;
 position:fixed;
 top:0;
 right:-100%;
-width:280px;
-height:100%;
+width:260px;
+height:100vh;
 background:#0f2027;
 transition:.4s;
-padding-top:80px;
+padding-top:100px;
+z-index:2000;
 }
 
 #navMenu.active{
@@ -271,23 +272,35 @@ right:0;
 
 .menu{
 flex-direction:column;
+align-items:flex-start;
+padding-left:30px;
 }
 
 .menu li{
 margin:15px 0;
 }
 
-.mega-menu{
-position:static;
-flex-direction:column;
-width:100%;
-box-shadow:none;
-padding:10px;
-background:#1c2b3a;
+.menu a{
+color:#fff;
+font-size:16px;
 }
 
-.mega-column a{
-color:#fff;
+.cta-btn{
+background:#0077ff;
+}
+
+.dropdown{
+position:static;
+background:none;
+box-shadow:none;
+opacity:1;
+visibility:visible;
+display:none;
+padding-left:15px;
+}
+
+.mega-parent.active .dropdown{
+display:block;
 }
 
 }
@@ -437,11 +450,23 @@ content.style.display = "block";
 }
 }
 
+// MOBILE DROPDOWN FIX
+
+document.querySelectorAll(".mega-parent > a").forEach(item=>{
+item.addEventListener("click", function(e){
+if(window.innerWidth <= 992){
+e.preventDefault();
+this.parentElement.classList.toggle("active");
+}
+});
+});
+
 </script>
 
 </body>
 
 </html>
+
 
 
 
