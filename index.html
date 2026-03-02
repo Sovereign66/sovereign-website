@@ -91,44 +91,39 @@ padding:8px 18px;
 border-radius:4px;
 }
 
-/* MEGA MENU */
+/* ===== VERTICAL DROPDOWN ===== */
 
-.mega-menu{
+.dropdown{
 position:absolute;
-top:60px;
+top:45px;
 left:0;
-width:100%;
 background:#ffffff;
-display:flex;
-justify-content:space-around;
-padding:40px 80px;
-box-shadow:0 15px 35px rgba(0,0,0,0.15);
+min-width:220px;
+box-shadow:0 10px 25px rgba(0,0,0,.15);
 opacity:0;
 visibility:hidden;
-transition:all .3s ease;
+transition:.3s;
 z-index:999;
+border-radius:6px;
 }
 
-.mega-parent:hover .mega-menu{
+.dropdown a{
+display:block;
+padding:12px 15px;
+color:#333;
+text-decoration:none;
+font-size:14px;
+border-bottom:1px solid #eee;
+}
+
+.dropdown a:hover{
+background:#f4f7fb;
+color:#0077ff;
+}
+
+.mega-parent:hover .dropdown{
 opacity:1;
 visibility:visible;
-}
-
-.mega-column{
-flex:1;
-display:flex;
-flex-direction:column;
-}
-
-.mega-column h4{
-color:#2c5364;
-margin-bottom:10px;
-}
-
-.mega-column a{
-color:#333;
-padding:5px 0;
-font-size:14px;
 }
 
 /* HAMBURGER */
@@ -294,29 +289,13 @@ color:#fff;
 <li class="mega-parent">
 <a href="#">Products ▾</a>
 
-<div class="mega-menu">
-
-<div class="mega-column">
-<h4>Industrial Automation</h4>
-<a href="industrial-automation.html">View All</a>
+<div class="dropdown">
+<a href="industrial-automation.html">Industrial Automation</a>
+<a href="wire-cable-machinery.html">Wire & Cable Machinery</a>
+<a href="solar-structural-systems.html">Solar Structures</a>
+<a href="turbine-side-channel-blowers.html">Blowers</a>
 </div>
 
-<div class="mega-column">
-<h4>Wire & Cable Machinery</h4>
-<a href="wire-cable-machinery.html">View All</a>
-</div>
-
-<div class="mega-column">
-<h4>Solar Structures</h4>
-<a href="solar-structural-systems.html">View All</a>
-</div>
-
-<div class="mega-column">
-<h4>Blowers</h4>
-<a href="turbine-side-channel-blowers.html">View All</a>
-</div>
-
-</div>
 </li>
 
 <li><a href="contact.html">Contact</a></li>
@@ -392,6 +371,7 @@ navMenu.classList.toggle("active");
 </body>
 
 </html>
+
 
 
 
