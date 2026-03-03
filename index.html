@@ -324,9 +324,32 @@ cursor:pointer;
 width:28px;height:3px;background:#fff;
 }
 
-@media(max-width:992px){
+@media (max-width: 992px) {
 
-.hamburger{display:flex;}
+    .hamburger {
+        display: flex;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    #navMenu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        height: 100vh;
+        background: #0f2027;
+        padding: 100px 25px;
+        transition: .4s;
+        z-index: 9999;
+    }
+
+    #navMenu.active {
+        right: 0;
+    }
+}
 
 nav ul{display:none;}
 
@@ -559,6 +582,7 @@ this.parentElement.classList.toggle("active");
 
 </body>
 </html>
+
 
 
 
