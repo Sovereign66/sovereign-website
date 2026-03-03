@@ -13,6 +13,7 @@
 /* ===== GLOBAL ===== */
 
 *{margin:0;padding:0;box-sizing:border-box;}
+
 body{
 font-family:'Montserrat',sans-serif;
 background:#f4f7fb;
@@ -21,7 +22,33 @@ overflow-x:hidden;
 }
 
 section{padding:100px 20px;}
+
 h1,h2,h3{font-weight:700;letter-spacing:.5px;}
+
+/* ===== LOADER ===== */
+
+#loader{
+position:fixed;
+width:100%;
+height:100%;
+background:#0f2027;
+display:flex;
+align-items:center;
+justify-content:center;
+z-index:9999;
+}
+
+.gear{
+width:60px;height:60px;
+border:8px solid #00c6ff;
+border-top:8px solid transparent;
+border-radius:50%;
+animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+100%{transform:rotate(360deg);}
+}
 
 /* ===== HEADER ===== */
 
@@ -60,7 +87,7 @@ font-weight:600;
 position:absolute;
 top:45px;
 left:0;
-background:#ffffff;
+background:#fff;
 width:260px;
 padding:10px 0;
 border-radius:8px;
@@ -117,8 +144,81 @@ width:100%;height:100%;
 background:linear-gradient(to right,rgba(15,32,39,.95),rgba(0,119,255,.4));
 }
 
-.hero-content{position:relative;z-index:1;}
+.hero-content{position:relative;z-index:1;max-width:900px;}
+
 .hero h1{font-size:48px;margin-bottom:20px;}
+
+/* ===== CATEGORY GRID ===== */
+
+.category-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;margin-top:50px;
+}
+
+.category-card{
+background:#fff;
+padding:40px;
+border-radius:12px;
+transition:.4s;
+border:1px solid rgba(0,0,0,.05);
+text-align:center;
+font-weight:600;
+}
+
+.category-card:hover{
+transform:translateY(-8px);
+border-color:#0077ff;
+box-shadow:0 15px 40px rgba(0,119,255,.2);
+}
+
+/* ===== STATS ===== */
+
+.stats{
+background:linear-gradient(90deg,#0f2027,#203a43);
+color:#fff;text-align:center;
+}
+
+.stats-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:30px;margin-top:40px;
+}
+
+.stats h3{font-size:40px;color:#00c6ff;}
+
+/* ===== LEAD FORM ===== */
+
+.lead-form{text-align:center;background:#f4f7fb;}
+
+.lead-form form{
+max-width:600px;margin:30px auto;
+display:flex;flex-direction:column;gap:15px;
+}
+
+.lead-form input,
+.lead-form textarea{
+padding:12px;border:1px solid #ddd;border-radius:6px;
+}
+
+.lead-form button{
+background:#0077ff;color:#fff;
+padding:12px;border:none;border-radius:6px;cursor:pointer;
+}
+
+/* ===== WHATSAPP ===== */
+
+.whatsapp-float{
+position:fixed;
+bottom:25px;right:25px;
+background:#25D366;
+color:#fff;font-size:24px;
+width:55px;height:55px;
+display:flex;align-items:center;justify-content:center;
+border-radius:50%;
+box-shadow:0 10px 25px rgba(0,0,0,.3);
+z-index:999;
+}
 
 /* ===== MOBILE ===== */
 
@@ -141,10 +241,8 @@ nav ul{display:none;}
 
 #navMenu{
 position:fixed;
-top:0;
-right:-100%;
-width:280px;
-height:100vh;
+top:0;right:-100%;
+width:280px;height:100vh;
 background:#0f2027;
 padding:100px 25px;
 transition:.4s;
@@ -168,21 +266,12 @@ display:none;
 background:#1c2b3a;
 }
 
-.mega-menu div{
-border:none;
-}
-
 .mega-parent.active .mega-menu{
 display:block;
 }
 
-.mega-menu h4{
-color:#00c6ff;
-}
-
-.mega-menu a{
-color:#fff;
-}
+.mega-menu h4{color:#00c6ff;}
+.mega-menu a{color:#fff;}
 
 }
 
@@ -190,6 +279,8 @@ color:#fff;
 </head>
 
 <body>
+
+<div id="loader"><div class="gear"></div></div>
 
 <header id="mainHeader">
 
@@ -253,9 +344,47 @@ color:#fff;
 </div>
 </section>
 
+<section>
+<h2 style="text-align:center;">Our Core Industrial Divisions</h2>
+<div class="category-grid">
+<div class="category-card">Industrial Automation Systems</div>
+<div class="category-card">Wire & Cable Machinery</div>
+<div class="category-card">Solar Structural Solutions</div>
+<div class="category-card">Turbine & Side Channel Blowers</div>
+</div>
+</section>
+
+<section class="stats">
+<h2>Industrial Impact</h2>
+<div class="stats-grid">
+<div><h3>20+</h3><p>Automation Solutions</p></div>
+<div><h3>28+</h3><p>Cable Machines</p></div>
+<div><h3>100%</h3><p>Client Satisfaction</p></div>
+<div><h3>PAN</h3><p>India Support</p></div>
+</div>
+</section>
+
+<section class="lead-form">
+<h2>Request Industrial Consultation</h2>
+<form>
+<input type="text" placeholder="Your Name" required>
+<input type="email" placeholder="Your Email" required>
+<textarea placeholder="Your Requirement"></textarea>
+<button type="submit">Submit Inquiry</button>
+</form>
+</section>
+
+<footer>
+© 2026 Sovereign Automation & Manufacturing
+</footer>
+
+<a href="https://wa.me/919663091575" class="whatsapp-float">💬</a>
+
 <script>
 
-/* Mobile Menu Toggle */
+window.addEventListener("load",function(){
+document.getElementById("loader").style.display="none";
+});
 
 const hamburger=document.getElementById("hamburger");
 const navMenu=document.getElementById("navMenu");
@@ -263,8 +392,6 @@ const navMenu=document.getElementById("navMenu");
 hamburger.addEventListener("click",()=>{
 navMenu.classList.toggle("active");
 });
-
-/* Mobile Products Dropdown */
 
 document.querySelector(".mega-parent > a").addEventListener("click",function(e){
 if(window.innerWidth <= 992){
