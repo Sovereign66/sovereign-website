@@ -102,20 +102,26 @@ box-shadow:0 15px 35px rgba(0,119,255,.6);
 
 /* ===== MEGA MENU ===== */
 
-.mega-parent{position:relative;}
+/* ===== VERTICAL MEGA MENU ===== */
+
+.mega-parent{
+position:relative;
+}
 
 .mega-menu{
 position:absolute;
-top:40px;
+top:45px;
 left:0;
-background:#fff;
-display:flex;
-gap:40px;
-padding:30px;
-box-shadow:0 15px 40px rgba(0,0,0,.1);
+background:#ffffff;
+width:250px;
+padding:15px 0;
+border-radius:8px;
+box-shadow:0 15px 35px rgba(0,0,0,0.15);
 opacity:0;
 visibility:hidden;
-transition:.3s;
+transition:0.3s ease;
+z-index:999;
+display:block;
 }
 
 .mega-parent:hover .mega-menu{
@@ -123,6 +129,29 @@ opacity:1;
 visibility:visible;
 }
 
+.mega-menu div{
+padding:10px 20px;
+}
+
+.mega-menu h4{
+font-size:15px;
+margin-bottom:8px;
+color:#0077ff;
+}
+
+.mega-menu a{
+display:block;
+padding:6px 0;
+color:#1a1a1a;
+text-decoration:none;
+font-size:14px;
+transition:0.2s;
+}
+
+.mega-menu a:hover{
+color:#0077ff;
+padding-left:5px;
+}
 .mega-menu h4{color:#0077ff;margin-bottom:10px;}
 .mega-menu a{display:block;margin-bottom:8px;color:#1a1a1a;text-decoration:none;}
 
@@ -383,4 +412,5 @@ navMenu.classList.toggle("active");
 
 </body>
 </html>
+
 
