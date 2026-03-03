@@ -198,10 +198,16 @@ to { opacity: 1; }
 }
 
 .hero h1{
-font-size:48px;
-margin-bottom:20px;
-letter-spacing:4px;
-animation:textGlow 3s infinite alternate;
+    font-size: clamp(28px, 6vw, 58px);
+    font-weight:800;
+    letter-spacing:2px;
+    margin-bottom:15px;
+    text-transform:uppercase;
+    text-shadow:0 6px 25px rgba(0,0,0,0.35);
+    line-height:1.15;
+    padding:0 15px;
+    word-break: break-word;
+    animation:textGlow 3s infinite alternate;
 }
 
 @keyframes textGlow {
@@ -545,10 +551,10 @@ emailjs.init("M7GamsNSOU0fZjfvF");
 <div style="margin-bottom:20px;">
   <img src="assets/images/logo.png" 
        alt="Sovereign Automation & Manufacturing" 
-       style="height:110px; margin-bottom:25px;"
+       style="height:110px; margin-bottom:25px;">
 </div>
 
-<h1 style="font-size:58px; font-weight:800; letter-spacing:2px; margin-bottom:15px; text-transform:uppercase; text-shadow:0 6px 25px rgba(0,0,0,0.35);">
+<h1>
 SOVEREIGN AUTOMATION & MANUFACTURING
 </h1>
 
@@ -677,6 +683,7 @@ window.addEventListener("scroll", function() {
 
 </body>
 </html>
+
 
 
 
