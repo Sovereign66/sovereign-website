@@ -315,7 +315,16 @@ display:block;
 }
 
 </style>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+(function(){
+emailjs.init("YOUR_PUBLIC_KEY");
+})();
+</script>
+
 </head>
+
 
 <body>
 
@@ -429,12 +438,14 @@ Turbine & Side Channel Blowers
 
 <section class="lead-form" id="consultation">
 <h2>Request Industrial Consultation</h2>
-<form>
-<input type="text" placeholder="Your Name" required>
-<input type="email" placeholder="Your Email" required>
-<textarea placeholder="Your Requirement"></textarea>
+
+<form id="contactForm">
+<input type="text" name="user_name" placeholder="Your Name" required>
+<input type="email" name="user_email" placeholder="Your Email" required>
+<textarea name="message" placeholder="Your Requirement"></textarea>
 <button type="submit">Submit Inquiry</button>
 </form>
+
 <div id="formSuccess" style="display:none; margin-top:20px; color:green; font-weight:600;">
 ✔ Thank you! Our team will contact you shortly.
 </div>
@@ -447,7 +458,6 @@ Turbine & Side Channel Blowers
 <a href="https://wa.me/919663091575" class="whatsapp-float">💬</a>
 
 <script>
-
 window.addEventListener("load",function(){
 document.getElementById("loader").style.display="none";
 });
@@ -459,22 +469,20 @@ hamburger.addEventListener("click",()=>{
 navMenu.classList.toggle("active");
 });
 
-const form = document.querySelector(".lead-form form");
-
-if(form){
-form.addEventListener("submit",function(e){
+document.getElementById("contactForm").addEventListener("submit", function(e){
 e.preventDefault();
 
-this.reset();
-
-const success=document.getElementById("formSuccess");
-success.style.display="block";
-
-setTimeout(function(){
-success.style.display="none";
+emailjs.sendForm("YOUR_SERVICE_ID","YOUR_TEMPLATE_ID",this)
+.then(function(){
+document.getElementById("formSuccess").style.display="block";
+document.getElementById("contactForm").reset();
+setTimeout(()=>{
+document.getElementById("formSuccess").style.display="none";
 },4000);
+}, function(error){
+alert("Failed to send enquiry. Please try again.");
 });
-}
+});
 
 document.querySelector(".mega-parent > a").addEventListener("click",function(e){
 if(window.innerWidth <= 992){
@@ -482,11 +490,11 @@ e.preventDefault();
 this.parentElement.classList.toggle("active");
 }
 });
-
 </script>
 
 </body>
 </html>
+
 
 
 
