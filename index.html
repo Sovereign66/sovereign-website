@@ -14,6 +14,10 @@
 
 *{margin:0;padding:0;box-sizing:border-box;}
 
+html, body {
+    overflow-x: hidden;
+}
+
 body{
 font-family:'Montserrat',sans-serif;
 background:#f4f7fb;
@@ -131,8 +135,10 @@ text-decoration:none;
 
 .hero{
 height:100vh;
+width: 100%;
+max-width: 100%;
+overflow: hidden;
 background:url('assets/images/hero.jpg') center/cover no-repeat;
-background-attachment: fixed;
 background-position: center;
 background-size: cover;
 display:flex;
@@ -586,6 +592,7 @@ this.parentElement.classList.toggle("active");
 
 </body>
 </html>
+
 
 
 
