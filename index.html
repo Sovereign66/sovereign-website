@@ -419,6 +419,25 @@ display:block;
 .mega-menu h4{color:#00c6ff;}
 .mega-menu a{color:#fff;}
 
+/* ===== FOOTER STYLE ===== */
+
+.footer-container {
+    text-align: center;
+    padding: 40px 20px;
+    background: #0f2027;
+    color: #fff;
+}
+
+.footer-links a {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color: #00c6ff;
+}
+
 </style>
 
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
@@ -449,8 +468,10 @@ emailjs.init("M7GamsNSOU0fZjfvF");
 
 <nav id="navMenu">
 <ul>
-<li><a href="#">Home</a></li>
-<li><a href="#">About</a></li>
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="about.html">About</a></li>
 
 <li class="mega-parent">
 <a href="#">Products ▾</a>
@@ -476,16 +497,21 @@ emailjs.init("M7GamsNSOU0fZjfvF");
 </div>
 
 <div>
-<h4>Turbine & Side Channel Blowers</h4>
-<a href="#">Single Stage Blower</a>
-<a href="#">Double Stage Blower</a>
-<a href="#">Regenerative Blower</a>
+<h4>Industrial Blowers</h4>
+<a href="#">Single Stage</a>
+<a href="#">Double Stage</a>
+<a href="#">Regenerative</a>
 </div>
 
 </div>
 </li>
 
-<li><a href="#">Contact</a></li>
+<li><a href="industries.html">Industries</a></li>
+
+<li><a href="infrastructure.html">Infrastructure</a></li>
+
+<li><a href="contact.html">Contact</a></li>
+
 </ul>
 </nav>
 
@@ -570,9 +596,20 @@ Turbine & Side Channel Blowers
 </section>
 
 <footer>
-© 2026 Sovereign Automation & Manufacturing
-</footer>
+<div class="footer-container">
 
+<p>© 2026 Sovereign Automation & Manufacturing</p>
+
+<div class="footer-links">
+<a href="privacy-policy.html">Privacy Policy</a>
+<a href="terms-conditions.html">Terms & Conditions</a>
+<a href="certifications.html">Certifications</a>
+<a href="company-profile.pdf" target="_blank">Company Profile</a>
+</div>
+
+</div>
+</footer>
+    
 <a href="https://wa.me/919663091575" class="whatsapp-float">💬</a>
 
 <script>
@@ -612,6 +649,7 @@ this.parentElement.classList.toggle("active");
 
 </body>
 </html>
+
 
 
 
