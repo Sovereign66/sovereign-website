@@ -148,6 +148,24 @@ background:linear-gradient(to right,rgba(15,32,39,.95),rgba(0,119,255,.4));
 
 .hero h1{font-size:48px;margin-bottom:20px;}
 
+.hero-btn{
+display:inline-block;
+margin-top:25px;
+background:linear-gradient(45deg,#0077ff,#00c6ff);
+color:#fff;
+padding:14px 30px;
+border-radius:6px;
+text-decoration:none;
+font-weight:600;
+transition:.4s;
+box-shadow:0 10px 25px rgba(0,119,255,.4);
+}
+
+.hero-btn:hover{
+transform:translateY(-3px);
+box-shadow:0 15px 35px rgba(0,119,255,.6);
+}
+
 /* ===== CATEGORY GRID ===== */
 
 .category-grid{
@@ -341,6 +359,15 @@ display:block;
 <section class="hero">
 <div class="hero-content">
 <h1>Engineering Precision. Industrial Strength. Proven Performance.</h1>
+
+<p style="margin-top:15px;font-size:18px;opacity:0.9;">
+Industrial Automation | Wire & Cable Machinery | Solar Structures | Industrial Blowers
+</p>
+
+<a href="#consultation" class="hero-btn">
+Get Industrial Consultation
+</a>
+
 </div>
 </section>
 
@@ -364,7 +391,7 @@ display:block;
 </div>
 </section>
 
-<section class="lead-form">
+<section class="lead-form" id="consultation">
 <h2>Request Industrial Consultation</h2>
 <form>
 <input type="text" placeholder="Your Name" required>
@@ -404,3 +431,4 @@ this.parentElement.classList.toggle("active");
 
 </body>
 </html>
+
