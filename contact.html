@@ -811,6 +811,15 @@ this.parentElement.classList.toggle("active");
 }
 });
 
+
+/* MOBILE CATEGORY MENU */
+
+document.querySelectorAll(".category h4").forEach(cat=>{
+cat.addEventListener("click",function(){
+this.parentElement.classList.toggle("open");
+});
+});
+
 window.addEventListener("scroll", function() {
     const header = document.getElementById("mainHeader");
     header.classList.toggle("scrolled", window.scrollY > 50);
