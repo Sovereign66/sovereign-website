@@ -421,18 +421,24 @@ left:0;
 background:#1c2b3a;
 }
    
-    #navMenu {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 280px;
-        height: 100vh;
-        background: #0f2027;
-        padding: 100px 25px;
-        transition: .4s;
-        z-index: 9999;
-    }
+   #navMenu {
+position: fixed;
+top: 0;
+right: -100%;
+width: 280px;
+height: 100vh;
+background: #0f2027;
+padding: 100px 25px;
+transition: .4s;
+z-index: 9999;
+overflow-y: auto;
+-webkit-overflow-scrolling: touch;
+}
 
+body.menu-open{
+overflow:hidden;
+}
+    
     #navMenu.active {
         right: 0;
     }
@@ -752,7 +758,11 @@ const hamburger=document.getElementById("hamburger");
 const navMenu=document.getElementById("navMenu");
 
 hamburger.addEventListener("click",()=>{
+
 navMenu.classList.toggle("active");
+
+document.body.classList.toggle("menu-open");
+
 });
 
 document.getElementById("contactForm").addEventListener("submit", function(e){
@@ -784,14 +794,29 @@ this.parentElement.classList.toggle("open");
 });
 
 window.addEventListener("scroll", function() {
-    const header = document.getElementById("mainHeader");
-    header.classList.toggle("scrolled", window.scrollY > 50);
+const header = document.getElementById("mainHeader");
+header.classList.toggle("scrolled", window.scrollY > 50);
+});
+
+document.addEventListener("click", function(e){
+
+if(
+!navMenu.contains(e.target) &&
+!hamburger.contains(e.target)
+){
+
+navMenu.classList.remove("active");
+document.body.classList.remove("menu-open");
+
+}
+
 });
     
 </script>
 
 </body>
 </html>
+
 
 
 
