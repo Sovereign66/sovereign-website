@@ -154,8 +154,21 @@ left:260px;
 top:0;
 background:#fff;
 width:260px;
-padding:10px;
-box-shadow:0 10px 25px rgba(0,0,0,0.15);
+padding:10px 15px;
+border-radius:8px;
+box-shadow:0 15px 35px rgba(0,0,0,0.15);
+
+max-height:420px;
+overflow-y:auto;
+}
+
+.submenu::-webkit-scrollbar{
+width:6px;
+}
+
+.submenu::-webkit-scrollbar-thumb{
+background:#0077ff;
+border-radius:10px;
 }
 
 .category:hover .submenu{
@@ -816,6 +829,7 @@ document.body.classList.remove("menu-open");
 
 </body>
 </html>
+
 
 
 
