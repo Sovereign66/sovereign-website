@@ -522,6 +522,15 @@ emailjs.init("M7GamsNSOU0fZjfvF");
 
 </head>
 
+<script>
+
+fetch("header.html")
+.then(response => response.text())
+.then(data => {
+document.getElementById("header").innerHTML = data;
+});
+
+</script>
 
 <body>
 
@@ -691,6 +700,7 @@ document.body.classList.remove("menu-open");
 
 </body>
 </html>
+
 
 
 
