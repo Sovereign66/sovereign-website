@@ -133,6 +133,56 @@ margin-bottom:6px;
 color:#0077ff;
 }
 
+/* ===== NEW 2 PANEL MEGA MENU ===== */
+
+.mega-container{
+display:flex;
+width:520px;
+}
+
+.mega-categories{
+width:220px;
+border-right:1px solid #eee;
+}
+
+.mega-category{
+padding:12px 18px;
+cursor:pointer;
+font-weight:600;
+}
+
+.mega-category:hover,
+.mega-category.active{
+background:#f2f6ff;
+color:#0077ff;
+}
+
+.mega-products{
+width:300px;
+max-height:420px;
+overflow-y:auto;
+padding:10px;
+}
+
+.mega-product-list{
+display:none;
+}
+
+.mega-product-list.active{
+display:block;
+}
+
+.mega-product-list a{
+display:block;
+padding:6px 0;
+color:#333;
+text-decoration:none;
+}
+
+.mega-product-list a:hover{
+color:#0077ff;
+}
+
 .mega-menu a{
 display:block;
 font-size:14px;
@@ -565,115 +615,85 @@ emailjs.init("M7GamsNSOU0fZjfvF");
 <li><a href="about.html">About</a></li>
 
 <li class="mega-parent">
+
 <a href="#">Products ▾</a>
 
 <div class="mega-menu">
 
-<!-- Category 1 -->
-<div class="category">
-<h4>Industrial Automation & Fabrication ▸</h4>
+<div class="mega-container">
 
-<div class="submenu">
+<div class="mega-categories">
 
-<a href="industrial-belt-conveyor.html">Industrial Belt Conveyor System</a>
-<a href="screw-conveyor-industrial.html">Screw Conveyor Industrial</a>
-<a href="bucket-elevator.html">Bucket Elevator Industrial Equipment</a>
-<a href="pneumatic-conveying.html">Pneumatic Conveying System Factory</a>
-<a href="ribbon-blender.html">Industrial Ribbon Blender Mixer</a>
-<a href="nauta-mixer.html">Nauta Mixer Industrial</a>
-<a href="industrial-batching.html">Industrial Batching System</a>
-<a href="auto-batching-plant.html">Automatic Weighing and Batching Plant</a>
-<a href="hopper-weighing.html">Hopper Weighing System</a>
-<a href="tank-weighing.html">Tank Weighing System Industrial</a>
-<a href="plc-control-panel.html">PLC Control Panel Industrial</a>
-<a href="scada-panel.html">SCADA Control Panel</a>
-<a href="mcc-panel.html">Electrical MCC Panel Industrial</a>
-<a href="panel-wiring.html">Industrial Automation Panel Wiring</a>
-<a href="powder-filling.html">Powder Filling Machine Industrial</a>
-<a href="liquid-filling.html">Liquid Filling Machine Industrial</a>
-<a href="bagging-machine.html">Industrial Bagging Machine</a>
-<a href="vibratory-feeder.html">Vibratory Feeder Industrial</a>
-<a href="material-handling.html">Material Handling System Factory</a>
-<a href="production-line.html">Complete Industrial Production Line</a>
-
-</div>
+<div class="mega-category active" data-target="automation">
+Industrial Automation
 </div>
 
-<!-- Category 2 -->
-
-<div class="category">
-<h4>Wire & Cable Machinery ▸</h4>
-
-<div class="submenu">
-
-<a href="multi-wire-extrusion.html">Multi-Wire Extrusion Line</a>
-<a href="power-cable-extrusion.html">Heavy Duty Power Cable Extrusion Line</a>
-<a href="optical-fibre-extrusion.html">Optical Fibre Cable Extrusion Line</a>
-<a href="high-speed-coiler.html">High Speed Automatic Coiling Machine</a>
-<a href="semi-auto-coiler.html">Semi-Auto Dual Coiler</a>
-<a href="multi-core-coiler.html">Multi-Core Auto Coiler</a>
-<a href="dual-head-coiler.html">Dual Head Auto Coiler</a>
-<a href="gi-wire-rewinding.html">GI Steel Wire Rewinding Machine</a>
-<a href="horizontal-payoff.html">Horizontal Pay-Off For GI Strip</a>
-<a href="horizontal-accumulator.html">Horizontal Accumulator</a>
-<a href="vertical-tall-accumulator.html">Vertical Tall Accumulator</a>
-<a href="vertical-accumulator.html">Standard Vertical Accumulator</a>
-<a href="turret-coiler.html">Dual Station Turret Coiler</a>
-<a href="length-counter.html">Standard Length Counter</a>
-<a href="printing-machine.html">500 MPM High Speed Printing Machine</a>
-<a href="taper-bobbin.html">Taper Bobbin Rewinding Machine</a>
-<a href="bobbin-rewinding.html">Bobbin to Bobbin Rewinding Machine</a>
-<a href="dual-takeup.html">Dual Take-Up Machine</a>
-<a href="conical-payoff.html">630-1000 mm Conical Pay-Off</a>
-<a href="driven-payoff.html">Driven Pay-Off Machine</a>
-<a href="dual-wheel-capstan.html">Dual Wheel Capstan Machine</a>
-<a href="medium-printing.html">Medium Speed Printing Machine</a>
-<a href="slow-printing.html">Slow Speed Printing Machine</a>
-<a href="dual-head-printing.html">Dual Head Printing Machine</a>
-<a href="cooling-trough.html">Cooling Trough</a>
-<a href="wire-tension.html">Wire Tension Unit</a>
-<a href="powder-applicator.html">Powder Applicator</a>
-<a href="coiling-spares.html">Coiling Machines & Extrusion Spares</a>
-
-</div>
+<div class="mega-category" data-target="wire">
+Wire & Cable Machinery
 </div>
 
-<!-- Category 3 -->
-
-<div class="category">
-<h4>Solar Structure Solutions ▸</h4>
-
-<div class="submenu">
-
-<a href="rooftop-solar.html">Rooftop Solar Mounting Structures</a>
-<a href="ground-solar.html">Ground Mounted Solar Structures</a>
-<a href="solar-carport.html">Solar Carport Structures</a>
-<a href="solar-pump.html">Solar Pump Mounting Structures</a>
-<a href="solar-components.html">Solar Mounting Components</a>
-<a href="solar-electrical.html">Electrical & Safety Support Structures</a>
-
-</div>
+<div class="mega-category" data-target="solar">
+Solar Structures
 </div>
 
-<!-- Category 4 -->
-
-<div class="category">
-<h4>Turbine & Side Channel Blowers ▸</h4>
-
-<div class="submenu">
-
-<a href="centrifugal-blower.html">Centrifugal Blowers</a>
-<a href="axial-fan.html">Axial Flow Fans</a>
-<a href="industrial-blower.html">Industrial Blowers & Fans</a>
-<a href="side-channel-blower.html">Turbine / Side Channel Blowers</a>
-<a href="special-blower.html">Special Blowers / Accessories</a>
-
-</div>
+<div class="mega-category" data-target="blower">
+Industrial Blowers
 </div>
 
 </div>
+
+<div class="mega-products">
+
+<div class="mega-product-list active" id="automation">
+
+<a href="#">Industrial Belt Conveyor</a>
+<a href="#">Screw Conveyor Industrial</a>
+<a href="#">Bucket Elevator</a>
+<a href="#">Pneumatic Conveying</a>
+<a href="#">Ribbon Blender</a>
+<a href="#">Nauta Mixer</a>
+<a href="#">Industrial Batching</a>
+<a href="#">PLC Control Panel</a>
+<a href="#">SCADA Panel</a>
+
+</div>
+
+<div class="mega-product-list" id="wire">
+
+<a href="#">Multi Wire Extrusion Line</a>
+<a href="#">Heavy Duty Cable Extrusion</a>
+<a href="#">Optical Fibre Extrusion</a>
+<a href="#">High Speed Coiling Machine</a>
+<a href="#">Dual Head Coiler</a>
+<a href="#">Printing Machine</a>
+
+</div>
+
+<div class="mega-product-list" id="solar">
+
+<a href="#">Rooftop Solar Structures</a>
+<a href="#">Ground Mounted Solar</a>
+<a href="#">Solar Carport</a>
+<a href="#">Solar Pump Structure</a>
+
+</div>
+
+<div class="mega-product-list" id="blower">
+
+<a href="#">Centrifugal Blower</a>
+<a href="#">Axial Flow Fan</a>
+<a href="#">Side Channel Blower</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
 </li>
-
+    
 <li><a href="industries.html">Industries</a></li>
 
 <li><a href="infrastructure.html">Infrastructure</a></li>
@@ -843,6 +863,26 @@ window.addEventListener("scroll", function() {
     const header = document.getElementById("mainHeader");
     header.classList.toggle("scrolled", window.scrollY > 50);
 });
+
+document.querySelectorAll(".mega-category").forEach(cat=>{
+
+cat.addEventListener("mouseenter",function(){
+
+document.querySelectorAll(".mega-category")
+.forEach(c=>c.classList.remove("active"))
+
+this.classList.add("active")
+
+let target=this.dataset.target
+
+document.querySelectorAll(".mega-product-list")
+.forEach(p=>p.classList.remove("active"))
+
+document.getElementById(target).classList.add("active")
+
+})
+
+})
 
 document.addEventListener("click", function(e){
 
