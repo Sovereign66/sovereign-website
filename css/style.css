@@ -25,7 +25,8 @@ h1,h2,h3{font-weight:700;letter-spacing:.5px;}
 /* ===== PREVENT MENU FLASH ===== */
 
 #navMenu {
-    display: block;
+    display: flex !important;
+}
 }
 
 /* ===== LOADER ===== */
