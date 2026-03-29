@@ -30,3 +30,11 @@ if (document.getElementById("consultation")) {
 if (document.getElementById("product-menu")) {
     loadComponent("product-menu", "components/product-menu.html");
 }
+
+// ===== LOADER FIX =====
+window.addEventListener("load", function () {
+    const loader = document.getElementById("loader");
+    if (loader) {
+        loader.style.display = "none";
+    }
+});
