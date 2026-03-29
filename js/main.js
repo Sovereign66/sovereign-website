@@ -61,3 +61,43 @@ document.addEventListener("DOMContentLoaded", function () {
 window.addEventListener("load", function () {
     document.body.classList.add("loaded");
 });
+
+// ===== PRODUCT PANEL SYSTEM =====
+
+function openCategory(type){
+
+const panel = document.getElementById("productPanel");
+const data = document.getElementById("panelData");
+
+panel.classList.add("active");
+document.body.classList.add("panel-open");
+
+if(type === "wire"){
+data.innerHTML = `
+<h3>Wire & Cable Machinery</h3>
+<ul>
+<li>Take Up Machine</li>
+<li>Pay Off Machine</li>
+<li>Wire Drawing Machine</li>
+<li>Coiling Machine</li>
+</ul>
+`;
+}
+
+if(type === "automation"){
+data.innerHTML = `
+<h3>Automation Products</h3>
+<ul>
+<li>Control Panel</li>
+<li>PLC System</li>
+<li>Sensor Based System</li>
+</ul>
+`;
+}
+
+}
+
+function closePanel(){
+document.getElementById("productPanel").classList.remove("active");
+document.body.classList.remove("panel-open");
+}
