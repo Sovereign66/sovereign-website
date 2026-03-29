@@ -8,12 +8,12 @@ function loadComponent(id, file) {
         .catch(error => console.log("Error loading:", file));
 }
 
-// ===== COMMON COMPONENTS (ALL PAGES) =====
+// ===== COMMON =====
 loadComponent("header", "components/header.html");
 loadComponent("menu", "components/menu.html");
 loadComponent("footer", "components/footer.html");
 
-// ===== HOME PAGE ONLY COMPONENTS =====
+// ===== HOME PAGE =====
 if (document.getElementById("categories")) {
     loadComponent("categories", "components/categories.html");
 }
@@ -24,4 +24,9 @@ if (document.getElementById("stats")) {
 
 if (document.getElementById("consultation")) {
     loadComponent("consultation", "components/consultation-form.html");
+}
+
+// ===== PRODUCT MENU =====
+if (document.getElementById("product-menu")) {
+    loadComponent("product-menu", "components/product-menu.html");
 }
