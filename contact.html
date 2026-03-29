@@ -10,12 +10,8 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
 
+<!-- EMAILJS -->
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-<script>
-(function(){
-emailjs.init("M7GamsNSOU0fZjfvF");
-})();
-</script>
 
 </head>
 
@@ -126,19 +122,38 @@ Belagavi – 590008, Karnataka
 <!-- MAIN JS -->
 <script src="js/main.js"></script>
 
-<!-- FORM SCRIPT -->
+<!-- EMAILJS SCRIPT -->
 <script>
-document.getElementById("contactForm").addEventListener("submit", function(e){
+(function(){
+emailjs.init("M7GamsNSOU0fZjfvF");
+})();
+
+document.addEventListener("DOMContentLoaded", function(){
+
+const form = document.getElementById("contactForm");
+
+if(form){
+form.addEventListener("submit", function(e){
 e.preventDefault();
 
-emailjs.sendForm("service_r7os0j8","template_8ygz60g",this)
+emailjs.sendForm(
+"service_r7os0j8",
+"template_8ygz60g",
+this
+)
 .then(function(){
 document.getElementById("formSuccess").style.display="block";
-document.getElementById("contactForm").reset();
-setTimeout(()=>{document.getElementById("formSuccess").style.display="none";},4000);
+form.reset();
+setTimeout(()=>{
+document.getElementById("formSuccess").style.display="none";
+},4000);
 }, function(){
 alert("Failed to send enquiry. Please try again.");
 });
+
+});
+}
+
 });
 </script>
 
