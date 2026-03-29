@@ -3,38 +3,42 @@ function loadComponent(id, file) {
     fetch(file)
         .then(response => response.text())
         .then(data => {
-            document.getElementById(id).innerHTML = data;
+            const el = document.getElementById(id);
+            if (el) el.innerHTML = data;
         })
         .catch(error => console.log("Error loading:", file));
 }
 
-// ===== COMMON =====
-loadComponent("header", "components/header.html");
-loadComponent("menu", "components/menu.html");
-loadComponent("footer", "components/footer.html");
+// ===== LOAD AFTER DOM READY =====
+document.addEventListener("DOMContentLoaded", function () {
 
-// ===== HOME PAGE =====
-if (document.getElementById("categories")) {
-    loadComponent("categories", "components/categories.html");
-}
+    // ===== COMMON =====
+    loadComponent("header", "components/header.html");
+    loadComponent("menu", "components/menu.html");
+    loadComponent("footer", "components/footer.html");
 
-if (document.getElementById("stats")) {
-    loadComponent("stats", "components/stats.html");
-}
+    // ===== HOME PAGE =====
+    if (document.getElementById("categories")) {
+        loadComponent("categories", "components/categories.html");
+    }
 
-if (document.getElementById("consultation")) {
-    loadComponent("consultation", "components/consultation-form.html");
-}
+    if (document.getElementById("stats")) {
+        loadComponent("stats", "components/stats.html");
+    }
 
-// ===== PRODUCT MENU =====
-if (document.getElementById("product-menu")) {
-    loadComponent("product-menu", "components/product-menu.html");
-}
+    if (document.getElementById("consultation")) {
+        loadComponent("consultation", "components/consultation-form.html");
+    }
 
-// ===== LOADER FIX =====
-window.addEventListener("load", function () {
+    // ===== PRODUCT MENU =====
+    if (document.getElementById("product-menu")) {
+        loadComponent("product-menu", "components/product-menu.html");
+    }
+
+    // ===== LOADER HIDE (FAST) =====
     const loader = document.getElementById("loader");
     if (loader) {
         loader.style.display = "none";
     }
+
 });
