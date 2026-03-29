@@ -36,13 +36,13 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    // ===== PRODUCT MENU =====
+    // ===== PRODUCT MENU (SAFE) =====
     if (document.getElementById("product-menu")) {
         loadComponent("product-menu", "components/product-menu.html");
     }
 
 
-    // ===== LOADER REMOVE (SMOOTH) =====
+    // ===== LOADER REMOVE =====
     const loader = document.getElementById("loader");
 
     if (loader) {
@@ -57,47 +57,47 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-// ===== PAGE LOADED CLASS =====
-window.addEventListener("load", function () {
-    document.body.classList.add("loaded");
-});
-
-// ===== PRODUCT PANEL SYSTEM =====
+// ===== PRODUCT PANEL SYSTEM (SAFE VERSION) =====
 
 function openCategory(type){
 
-const panel = document.getElementById("productPanel");
-const data = document.getElementById("panelData");
+    const panel = document.getElementById("productPanel");
+    const data = document.getElementById("panelData");
 
-panel.classList.add("active");
-document.body.classList.add("panel-open");
+    if (!panel || !data) return; // ❗ error avoid
 
-if(type === "wire"){
-data.innerHTML = `
-<h3>Wire & Cable Machinery</h3>
-<ul>
-<li>Take Up Machine</li>
-<li>Pay Off Machine</li>
-<li>Wire Drawing Machine</li>
-<li>Coiling Machine</li>
-</ul>
-`;
-}
+    panel.classList.add("active");
+    document.body.classList.add("panel-open");
 
-if(type === "automation"){
-data.innerHTML = `
-<h3>Automation Products</h3>
-<ul>
-<li>Control Panel</li>
-<li>PLC System</li>
-<li>Sensor Based System</li>
-</ul>
-`;
-}
+    if(type === "wire"){
+        data.innerHTML = `
+        <h3>Wire & Cable Machinery</h3>
+        <ul>
+            <li>Take Up Machine</li>
+            <li>Pay Off Machine</li>
+            <li>Wire Drawing Machine</li>
+            <li>Coiling Machine</li>
+        </ul>
+        `;
+    }
+
+    if(type === "automation"){
+        data.innerHTML = `
+        <h3>Automation Products</h3>
+        <ul>
+            <li>Control Panel</li>
+            <li>PLC System</li>
+            <li>Sensor Based System</li>
+        </ul>
+        `;
+    }
 
 }
 
 function closePanel(){
-document.getElementById("productPanel").classList.remove("active");
-document.body.classList.remove("panel-open");
+    const panel = document.getElementById("productPanel");
+    if (!panel) return;
+
+    panel.classList.remove("active");
+    document.body.classList.remove("panel-open");
 }
