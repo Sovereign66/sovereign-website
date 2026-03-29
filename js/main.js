@@ -12,12 +12,12 @@ function loadComponent(id, file) {
 // ===== LOAD AFTER DOM READY =====
 document.addEventListener("DOMContentLoaded", function () {
 
-    // ===== COMMON =====
+    // HEADER + MENU + FOOTER
     loadComponent("header", "components/header.html");
     loadComponent("menu", "components/menu.html");
     loadComponent("footer", "components/footer.html");
 
-    // ===== HOME PAGE =====
+    // HOME PAGE
     if (document.getElementById("categories")) {
         loadComponent("categories", "components/categories.html");
     }
@@ -30,15 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
         loadComponent("consultation", "components/consultation-form.html");
     }
 
-    // ===== PRODUCT MENU =====
-    if (document.getElementById("product-menu")) {
-        loadComponent("product-menu", "components/product-menu.html");
-    }
-
-    // ===== LOADER HIDE (FAST) =====
+    // LOADER REMOVE
     const loader = document.getElementById("loader");
-    if (loader) {
-        loader.style.display = "none";
-    }
-
+    if (loader) loader.style.display = "none";
 });
