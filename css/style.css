@@ -390,4 +390,42 @@ visibility:visible;
 display:block;
 }
 
+/* ===== PRODUCT PANEL ===== */
+
+.product-panel{
+position:fixed;
+top:0;
+right:-100%;
+width:350px;
+height:100%;
+background:#fff;
+z-index:99999;
+transition:0.4s;
+overflow-y:auto;
+box-shadow:-10px 0 30px rgba(0,0,0,0.2);
+}
+
+.product-panel.active{
+right:0;
+}
+
+.panel-content{
+padding:20px;
+}
+
+.close-btn{
+background:#ff4d4d;
+color:#fff;
+border:none;
+padding:8px 12px;
+cursor:pointer;
+margin-bottom:20px;
+}
+
+/* ===== FREEZE BACKGROUND ===== */
+
+body.panel-open{
+overflow:hidden;
+}
+
 }
