@@ -433,6 +433,47 @@ overflow:hidden;
     background: rgba(15,32,39,0.95) !important;
 }
 
+/* ===== MENU FIX ===== */
+
+#menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+/* NAV STYLE */
+#menu nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px 40px;
+}
+
+/* MENU LIST */
+#menu ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+/* LINKS */
+#menu ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+/* HOVER */
+#menu ul li a:hover {
+    color: #00c6ff;
+}
+
 #navMenu ul li a {
     color: #fff !important;
 }
