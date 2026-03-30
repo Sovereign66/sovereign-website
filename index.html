@@ -82,6 +82,33 @@
 <!-- JS -->
 <script src="js/main.js"></script>
 
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(e){
+e.preventDefault();
+
+emailjs.sendForm(
+    "service_r7os0j8",
+    "template_8ygz60g",
+    this
+)
+.then(function(response){
+    console.log("SUCCESS!", response.status, response.text);
+
+    document.getElementById("formSuccess").style.display = "block";
+    document.getElementById("contactForm").reset();
+
+    setTimeout(() => {
+        document.getElementById("formSuccess").style.display = "none";
+    }, 4000);
+
+}, function(error){
+    console.log("FAILED...", error);
+
+    alert("❌ Failed to send enquiry. Check console.");
+});
+});
+</script>
+
 </body>
 
 <div id="productPanel" class="product-panel">
