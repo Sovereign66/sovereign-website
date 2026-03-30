@@ -426,3 +426,13 @@ overflow:hidden;
 }
 
 }
+
+/* ===== FORCE MENU VISIBLE ===== */
+
+#mainHeader {
+    background: rgba(15,32,39,0.95) !important;
+}
+
+#navMenu ul li a {
+    color: #fff !important;
+}
