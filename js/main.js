@@ -1,21 +1,16 @@
 // ===== COMPONENT LOADER =====
 function loadComponent(id, file) {
 
-    // 🔥 AUTO PATH FIX (important)
-    let path = window.location.pathname.includes("/products/")
-        ? "../" + file
-        : file;
-
-    fetch(path)
+    fetch("/" + file)   // 🔥 FIX: absolute path
         .then(response => {
-            if (!response.ok) throw new Error("File not found: " + path);
+            if (!response.ok) throw new Error("File not found: " + file);
             return response.text();
         })
         .then(data => {
             const el = document.getElementById(id);
             if (el) el.innerHTML = data;
         })
-        .catch(error => console.log("Error loading:", path));
+        .catch(error => console.log("Error loading:", file));
 }
 
 
@@ -38,12 +33,6 @@ document.addEventListener("DOMContentLoaded", function () {
         loadComponent("consultation", "components/consultation-form.html");
     }
 
-    if (document.getElementById("product-menu")) {
-        loadComponent("product-menu", "components/product-menu.html");
-    }
-
-    // loader remove
     const loader = document.getElementById("loader");
     if (loader) loader.style.display = "none";
-
 });
