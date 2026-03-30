@@ -10,8 +10,14 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
 
+<!-- EMAILJS -->
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    
+<script>
+(function(){
+emailjs.init("M7GamsNSOU0fZjfvF");
+})();
+</script>
+
 </head>
 
 <body>
@@ -24,25 +30,25 @@
 
 <!-- HERO -->
 <section class="hero">
-    <div class="hero-content">
+<div class="hero-content">
 
-        <img src="assets/images/logo.png" alt="logo" style="height:110px;">
+<img src="assets/images/logo.png" alt="logo" style="height:110px;">
 
-        <h1>SOVEREIGN AUTOMATION & MANUFACTURING</h1>
+<h1>SOVEREIGN AUTOMATION & MANUFACTURING</h1>
 
-        <p>
-        Industrial Automation | Wire & Cable Machinery | Solar Structures | Industrial Blowers
-        </p>
+<p>
+Industrial Automation | Wire & Cable Machinery | Solar Structures | Industrial Blowers
+</p>
 
-        <a href="#consultation" class="hero-btn">Get Consultation</a>
+<a href="#consultation" class="hero-btn">Get Consultation</a>
 
-    </div>
+</div>
 </section>
 
 <!-- CATEGORIES -->
 <section>
-    <h2 style="text-align:center;">Our Core Divisions</h2>
-    <div id="categories"></div>
+<h2 style="text-align:center;">Our Core Divisions</h2>
+<div id="categories"></div>
 </section>
 
 <!-- STATS -->
@@ -51,28 +57,28 @@
 <!-- CONSULTATION FORM -->
 <section class="lead-form" id="consultation">
 
-    <h2>Send Us Your Inquiry</h2>
+<h2>Send Us Your Inquiry</h2>
 
-    <form id="contactForm">
+<form id="contactForm">
 
-        <div class="form-row">
-            <input type="text" name="user_name" placeholder="Your Name" required>
-            <input type="email" name="user_email" placeholder="Your Email" required>
-        </div>
+<div class="form-row">
+<input type="text" name="user_name" placeholder="Your Name" required>
+<input type="email" name="user_email" placeholder="Your Email" required>
+</div>
 
-        <div class="form-row">
-            <input type="tel" name="user_phone" placeholder="Your Phone">
-        </div>
+<div class="form-row">
+<input type="tel" name="user_phone" placeholder="Your Phone">
+</div>
 
-        <textarea name="message" placeholder="Your Requirement"></textarea>
+<textarea name="message" placeholder="Your Requirement"></textarea>
 
-        <button type="submit">Submit Inquiry</button>
+<button type="submit">Submit Inquiry</button>
 
-    </form>
+</form>
 
-    <div id="formSuccess">
-        ✔ Thank you! Our team will contact you shortly.
-    </div>
+<div id="formSuccess" style="display:none; margin-top:15px; color:green; font-weight:600;">
+✔ Thank you! Our team will contact you shortly.
+</div>
 
 </section>
 
@@ -82,43 +88,29 @@
 <!-- JS -->
 <script src="js/main.js"></script>
 
+<!-- FORM SCRIPT -->
 <script>
 document.getElementById("contactForm").addEventListener("submit", function(e){
 e.preventDefault();
 
 emailjs.sendForm(
-    "service_r7os0j8",
-    "template_8ygz60g",
-    this
+"service_r7os0j8",
+"template_8ygz60g",
+this
 )
-.then(function(response){
-    console.log("SUCCESS!", response.status, response.text);
+.then(function(){
+document.getElementById("formSuccess").style.display = "block";
+document.getElementById("contactForm").reset();
 
-    document.getElementById("formSuccess").style.display = "block";
-    document.getElementById("contactForm").reset();
+setTimeout(() => {
+document.getElementById("formSuccess").style.display = "none";
+}, 4000);
 
-    setTimeout(() => {
-        document.getElementById("formSuccess").style.display = "none";
-    }, 4000);
-
-}, function(error){
-    console.log("FAILED...", error);
-
-    alert("❌ Failed to send enquiry. Check console.");
+}, function(){
+alert("Failed to send enquiry. Try again.");
 });
 });
 </script>
 
 </body>
-
-<div id="productPanel" class="product-panel">
-<div class="panel-content">
-
-<button class="close-btn" onclick="closePanel()">✖</button>
-
-<div id="panelData"></div>
-
-</div>
-</div>
-    
 </html>
