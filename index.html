@@ -48,8 +48,33 @@
 <!-- STATS -->
 <div id="stats"></div>
 
-<!-- FORM -->
-<div id="consultation"></div>
+<!-- CONSULTATION FORM -->
+<section class="lead-form" id="consultation">
+
+    <h2>Send Us Your Inquiry</h2>
+
+    <form id="contactForm">
+
+        <div class="form-row">
+            <input type="text" name="user_name" placeholder="Your Name" required>
+            <input type="email" name="user_email" placeholder="Your Email" required>
+        </div>
+
+        <div class="form-row">
+            <input type="tel" name="user_phone" placeholder="Your Phone">
+        </div>
+
+        <textarea name="message" placeholder="Your Requirement"></textarea>
+
+        <button type="submit">Submit Inquiry</button>
+
+    </form>
+
+    <div id="formSuccess">
+        ✔ Thank you! Our team will contact you shortly.
+    </div>
+
+</section>
 
 <!-- FOOTER -->
 <div id="footer"></div>
